@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diwali Wishes</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffcc70, #ff6f61);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #fff;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    #wish {
+      font-size: 1.5em;
+      margin-top: 30px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #fff;
+      color: #ff6f61;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🪔 Happy Diwali! 🪔</h1>
+  <input type="text" id="nameInput" placeholder="Enter your name" />
+  <br><br>
+  <button onclick="generateWish()">Get Your Wish</button>
+  <div id="wish"></div>
+
+  <script>
+    const greetings = [
+      "Wishing you a Diwali full of light and laughter!",
+      "May your Diwali sparkle with joy and prosperity!",
+      "Let the diyas brighten your path to success!",
+      "Celebrate Diwali with sweets, smiles, and blessings!",
+      "May this Diwali bring peace, love, and happiness!"
+    ];
+    const emojis = ["🪔", "🎆", "✨", "🎉", "🌟", "💥"];
+
+    function generateWish() {
+      const name = document.getElementById("nameInput").value;
+      const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+      const personalized = name ? `Dear ${name}, ` : "";
+      document.getElementById("wish").innerText = `${personalized}${greeting} ${emoji}`;
+    }
+
+  </script>
+</body>
+</html>
